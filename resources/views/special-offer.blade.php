@@ -6,9 +6,9 @@
             {!! $error !!}
         </div>
     @endforeach
-    @if(isset($success))
+    @if(session()->has('success'))
         <div class="alert alert-success">
-            {!! $success !!}
+            {!! session()->get('success') !!}
         </div>
     @endif
     <form method="post" action="{!! route('save.offer') !!}">

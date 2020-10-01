@@ -18,6 +18,7 @@ class SpecialOffer extends Model
         $obj->name = $request->get('offer');
         $obj->discount = $request->get('discount');
         $obj->save();
+        (new VoucherCode())->saveVoucher($request->get('expiry') , $obj->id);
         return 1;
     }
 }
