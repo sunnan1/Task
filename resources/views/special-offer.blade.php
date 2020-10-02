@@ -29,5 +29,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
+    <br>
+    <a href="{!! route('recipient') !!}">Create Recipient !</a>
 @endsection

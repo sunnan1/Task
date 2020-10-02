@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Traits;
 
+use App\Events\VoucherCodeEvent;
 use App\Http\Requests\SpecialOfferRequest;
 use Illuminate\Http\Request;
 

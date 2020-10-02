@@ -2,6 +2,14 @@
 
 namespace App\Providers;
 
+use App\Events\ConsumeVoucher;
+use App\Events\IsVoucherValid;
+use App\Events\VoucherCodeEvent;
+use App\Listeners\MakeVoucherTrans;
+use App\Listeners\VerifyEmail;
+use App\Listeners\VerifyVoucher;
+use App\Listeners\VerifyVoucherValidity;
+use App\Listeners\VoucherCodeListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -15,8 +23,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
+        ConsumeVoucher::class => [
+            MakeVoucherTrans::class,
         ],
     ];
 

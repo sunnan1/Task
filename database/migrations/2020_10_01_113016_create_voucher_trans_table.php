@@ -18,7 +18,6 @@ class CreateVoucherTransTable extends Migration
             $table->bigInteger('voucher')->unsigned();
             $table->bigInteger('recipient')->unsigned();
             $table->timestamps();
-            $table->date('used_at');
         });
 
         Schema::table('voucher_trans', function (Blueprint $table) {

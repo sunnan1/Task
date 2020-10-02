@@ -15,7 +15,7 @@ class CreateVoucherCodesTable extends Migration
     {
         Schema::create('voucher_codes', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
+            $table->string('code')->unique();
             $table->date('expiry');
             $table->bigInteger('offer')->unsigned();
             $table->softDeletes();

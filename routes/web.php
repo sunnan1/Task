@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\APIContrtoller;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use App\Http\Controllers\TaskController;
 
 Route::get('/', [TaskController::class , 'index']);
 Route::post('create-offer', [TaskController::class , 'saveOffer'])->name('save.offer');
+Route::get('new-recipient', [TaskController::class , 'createRecipient'])->name('recipient');
+Route::post('save-recipient', [TaskController::class , 'saveRecipient'])->name('save.recipient');
+Route::get('verify', [TaskController::class , 'verifyVoucher']);
+Route::post('verify-voucher' , [APIContrtoller::class , 'validateVoucher'])->name('validate');
